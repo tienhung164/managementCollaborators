@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Quản lí đơn hàng</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
@@ -266,8 +266,8 @@ right-0
     <!--- thông báo  -->
     <div class="static flex overflow-x-hidden ">
         <div class="py-0  animate-marquee  whitespace-nowrap absolute -right-0 ">
-            <span class="text-xs mx-4">Đơn hàng mang tên A của bạn đã được chấp nhận và vận chuyển</span>
-            <span class="text-xs mx-4">Đơn hàng mang tên B đã bị delay từ 4 hôm nay, đề nghị ctv liên lạc cho khác để
+            <span class="text-xs mx-4  text-Teal-600">Đơn hàng mang tên A của bạn đã được chấp nhận và vận chuyển</span>
+            <span class="text-xs mx-4 text-Teal-600">Đơn hàng mang tên B đã bị delay từ 4 hôm nay, đề nghị ctv liên lạc cho khác để
                 giải quyết</span>
         </div>
     </div>
@@ -275,173 +275,77 @@ right-0
 
     <div class="static  mt-10 mx-10">     
        <!-- code here -->
-       <form action="" method="post">
-       <div class="flex justify-center">
-        <div class="mb-3 xl:w-96">
-          <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700"
-            >Tên khách hàng</label
-          >
-          <input
-            type="text"
-            class="
-              form-control
-              block
-              w-full
-              px-3
-              py-1.5
-              text-base
-              font-normal
-              text-gray-700
-              bg-white bg-clip-padding
-              border border-solid border-gray-300
-              rounded
-              transition
-              ease-in-out
-              m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-            "
-            id="exampleText0"
-          />
+       <div class="flex flex-col">
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+            <div class="overflow-hidden">
+              <table class="min-w-full">
+                <thead class="bg-white border-b">
+                  <tr>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                      #
+                    </th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                      Tên ctv
+                    </th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                      Số đơn của tháng
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="bg-gray-100 border-b">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                      Mark
+                    </td>
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                      100
+                    </td>                   
+                  </tr>
+                  <tr class="bg-white border-b">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                      Jacob
+                    </td>
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                      20
+                    </td>
+                    
+                  </tr>
+                  <tr class="bg-gray-100 border-b">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                      Duyên
+                    </td>
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                      5
+                    </td>                   
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="flex justify-center">
-        <div class="mb-3 xl:w-96">
-          <label for="exampleTel0" class="form-label inline-block mb-2 text-gray-700"
-            >Số điện thoại người nhận hàng</label
-          >
-          <input
-            type="tel"
-            class="
-              form-control
-              block
-              w-full
-              px-3
-              py-1.5
-              text-base
-              font-normal
-              text-gray-700
-              bg-white bg-clip-padding
-              border border-solid border-gray-300
-              rounded
-              transition
-              ease-in-out
-              m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-            "
-            id="exampleTel0"
-          />
-        </div>
-      </div>
-      <div class="flex justify-center">
-        <div class="mb-3 xl:w-96">
-          <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700"
-            >Tổng giá đơn hàng</label
-          >
-          <input
-            type="text"
-            class="
-              form-control
-              block
-              w-full
-              px-3
-              py-1.5
-              text-base
-              font-normal
-              text-gray-700
-              bg-white bg-clip-padding
-              border border-solid border-gray-300
-              rounded
-              transition
-              ease-in-out
-              m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-            "
-            id="exampleText0"
-            placeholder="không tính phí ship "
-          />
-        </div>
-      </div>
-      <div class="flex justify-center">
-        <div class="mb-3 xl:w-96">
-          <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700"
-            >Link tất cả sản phẩm</label
-          >
-          <input
-            type="text"
-            class="
-              form-control
-              block
-              w-full
-              px-3
-              py-1.5
-              text-base
-              font-normal
-              text-gray-700
-              bg-white bg-clip-padding
-              border border-solid border-gray-300
-              rounded
-              transition
-              ease-in-out
-              m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-            "
-            id="exampleText0"
-            placeholder="Ctv copy link từ insta điền vào"
-          />
-        </div>
-      </div>
-      <div class="flex justify-center">
-        <div class="mb-3 xl:w-96">
-          <label for="exampleFormControlTextarea1" class="form-label inline-block mb-2 text-gray-700"
-            >Địa chỉ chi tiết</label
-          >
-          <textarea
-            class="
-              form-control
-              block
-              w-full
-              px-3
-              py-1.5
-              text-base
-              font-normal
-              text-gray-700
-              bg-white bg-clip-padding
-              border border-solid border-gray-300
-              rounded
-              transition
-              ease-in-out
-              m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-            "
-            id="exampleFormControlTextarea1"
-            rows="3"
-          ></textarea>
-        </div>
-      </div>
-      <div class="flex space-x-2 justify-center">
-        <div>
-      <button type="button" class="inline-block px-6 py-2.5 bg-green-800 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-900 hover:shadow-lg focus:bg-green-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-900 active:shadow-lg transition duration-150 ease-in-out">Xác nhận</button>
-    </div>
-</div>
-    </form>
-
-
+            
        <!-- code here -->
        
 
 
         <!-- danh sách chat -->
-        <div class="absolute right-2 bottom-2">
+        <div class="absolute right-2 bottom-2 drop-shadow-lg">
             <img src="../public/img/logo_nabar.JPG" onclick="document.getElementById('mess').style.display='block' " class="rounded-full w-12 " alt="Avatar" />
             
         </div>
-        <div class="absolute right-2 bottom-16">
+        <div class="absolute right-2 bottom-16 drop-shadow-lg">
             <img src="../public/img/group_logo.jpeg" onclick="document.getElementById('mess').style.display='block' " class="rounded-full w-12 my-0" alt="Avatar" />
         </div>
 
         <!--khung chat-->
         <div class="absolute h-98 w-72  right-16 bottom-0  " id="mess" >
-             <div class="h-12 w-full flex flex-row bg-gray-100 items-center rounded-t-lg  border-solid border-b border-gray-400">
+             <div class="h-12 w-full flex flex-row bg-gray-200 items-center rounded-t-lg  border-solid border-b border-gray-300 drop-shadow-lg">
                 <img src="../public/img/logo_nabar.JPG" class="rounded-full h-8 w-8 ml-1 " alt="Avatar" /> 
                 <span class="pl-1 " >Tiệm đồ si Pallgree</span>
                 <div class="w-2/6 flex flex-row justify-end items-center">  
@@ -452,7 +356,7 @@ right-0
                     </div>                                    
                 </div>
              </div>
-             <div class="h-4/6 w-full  bg-gray-50">
+             <div class="h-4/6 w-full  bg-gray-50 drop-shadow-lg">
                  <div class=" px-4 h-80 flex flex-col pt-1 overflow-y-auto">
                     <div class="w-full text-sm">
                         <div class="float-left" >câu hỏi đây</div>
@@ -475,7 +379,7 @@ right-0
                 </div>
 
             </div>
-            <div class=" h-14 w-full bg-gray-50">
+            <div class=" h-14 w-full bg-gray-50 drop-shadow-lg">
                 <div class="flex flex-row-reverse items-center">
                     <div class="my-3 mx-2 ">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
