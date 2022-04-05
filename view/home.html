@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
+    <link rel="icon" href="../public/img/icon.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
@@ -289,10 +290,10 @@ right-0
         </div>
         
         <!-- danh sách chat -->
-        <div class="absolute right-2 bottom-16 drop-shadow-lg">
-            <img src="../public/img/logo_nabar.JPG" onclick="document.getElementById('mess').style.display='block' " class="rounded-full w-12 my-0" alt="Avatar" />
+        <div class="absolute right-2 bottom-16 drop-shadow-xl block" id="iconMess1">
+            <img src="../public/img/logo_nabar.JPG" onclick="turnMess1()" class="rounded-full w-12 my-0" alt="Avatar" />
         </div>
-        <div class="absolute right-2 bottom-2 drop-shadow-lg">
+        <div class="absolute right-2 bottom-2 drop-shadow-xl">
             <img src="../public/img/group_logo.jpeg" onclick="document.getElementById('mess').style.display='block' " class="rounded-full w-12 " alt="Avatar" />
             
         </div>
@@ -304,7 +305,7 @@ right-0
                 <span class="pl-1 " >Tiệm đồ si Pallgree</span>
                 <div class="w-2/6 flex flex-row justify-end items-center">  
                     <div>
-                        <svg onclick="document.getElementById('mess').style.display='none'" xmlns="http://www.w3.org/2000/svg"  class="h-5 w-5 " viewBox="0 0 20 20" fill="currentColor">
+                        <svg onclick="reTurnMess1()" xmlns="http://www.w3.org/2000/svg"  class="h-5 w-5 " viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
                           </svg>
                     </div>                                    
@@ -448,6 +449,16 @@ right-0
         configLineChart
     );
 </script>
-<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+<script>
+    function turnMess1(){
+        document.getElementById('mess').style.display='block';
+        document.getElementById('iconMess1').style.display='none';       
+    }
+    function reTurnMess1(){
+        document.getElementById('mess').style.display='none';
+        document.getElementById('iconMess1').style.display='block';       
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></>
 
 </html>
