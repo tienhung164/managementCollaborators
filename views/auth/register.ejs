@@ -22,7 +22,7 @@
   }
 </script>
 </head>
-<body>
+<body>  
         <section class="h-screen">
             <div class="container px-6 py-12 h-full">
               <div class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
@@ -183,9 +183,12 @@ const register =()=>{
          stk:_stk
      },
      success: function (data) {
-         console.log(data.code)
-         if(data.code==2) window.location.href ='/'
-         if(data.code==1) $("#status").css({"display":"flex"}) 
+        // console.log(data.code)
+         if(data.code==2){ 
+           let email=data.email
+           window.location.href ='/auth/checkOTP?email='+email
+     }
+         if(data.code==1 || data.code==3) $("#status").css({"display":"flex"}) 
      }
  })
 }

@@ -3,25 +3,31 @@ const GMAIL_USERNAME = process.env.GMAIL_USERNAME
 const GMAIL_PASSWORD = process.env.GMAIL_PASSWORD
 
 
-async function sendMail(_to,_subject,_text) {
+async function sendM(_to,_subject,_text) {
 
   let transporter = nodemailer.createTransport({
-    host: "mail.smtp.port",
-    port: 587,
-    secure: false, 
+    service: 'gmail',
     auth: {
-      user: GMAIL_USERNAME, 
-      pass: GMAIL_PASSWORD, 
+      user: 'pallgree.dev@gmail.com', 
+      pass: 'fpt16042001', 
     },
   });
 
 
   let info = await transporter.sendMail({
-    from: '"Pallgree Shop 👻" <foo@example.com>', // sender address
+    from: '"Pallgree Shop" <do-not-reply@pallgree.io>', // sender address
     to: _to, // list of receivers
     subject: _subject, // Subject line
     text: _text, // plain text body
   });
+
+  //console.log(info);
 }
 
-module.exports= {sendMail}
+
+ 
+
+module.exports= {sendM}
+
+//  sendM("hungvt164@gmail.com",'Pallgree xin gửi OTP xác minh tài khoản',"123123").then(data => console.log(data))
+//                                                                  .catch(e => console.log(e))

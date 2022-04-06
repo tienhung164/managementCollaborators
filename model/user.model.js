@@ -18,7 +18,7 @@ let user = new Schema({
     insta: {
         type: String
     },
-    yearOfBrith: {
+    yearOfBirth: {
         type: Number
     },
     stk: {
@@ -32,10 +32,20 @@ let user = new Schema({
         type:Number,
         default: 0
     },
+    verify: {
+        type: Number,
+        default: 0
+    },
     date: {
         type: Date,
         default: Date.now
-    }
+    },
 })
 
 module.exports = mongoose.model('user', user);
+
+//role 0 user 
+//role 1 admin
+
+//verify 0 - no
+//verify 1 - yes
