@@ -26,6 +26,15 @@
         <section class="h-screen">
             <div class="container px-6 py-12 h-full">
               <div class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
+                <div class="top-8 absolute bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md hidden" id="alert" role="alert">
+                  <div class="flex">
+                    <div class="py-1"><svg class="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
+                    <div>
+                      <p class="font-bold">Thông báo</p>
+                      <p class="text-sm">Hệ thống đang xử lí yêu cầu.</p>
+                    </div>
+                  </div>
+                </div>
                 <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
                   <img
                     src="/public/img/logo_shop.png"
@@ -169,6 +178,7 @@ const register =()=>{
     let _insta= $("#insta").val()
     let _yearOfBrith= $("#year_of_birth").val()
     let _stk= $("#stk").val()
+    $("#alert").css({"display":"block"})
 
  $.ajax({
      type: "post",
@@ -188,7 +198,9 @@ const register =()=>{
            let email=data.email
            window.location.href ='/auth/checkOTP?email='+email
      }
-         if(data.code==1 || data.code==3) $("#status").css({"display":"flex"}) 
+         if(data.code==1 || data.code==3) { $("#status").css({"display":"flex"}) 
+         $("#alert").css({"display":"none"})
+        }
      }
  })
 }

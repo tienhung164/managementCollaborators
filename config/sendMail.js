@@ -21,7 +21,6 @@ async function sendM(_to,_subject,_text) {
     text: _text, // plain text body
   });
 
-  //console.log(info);
 }
 
 

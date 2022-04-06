@@ -11,7 +11,7 @@ let otpConfirm = new Schema({
     }
     ,
     date: {
-        type: Date,
+        type: String,
         default: Date.now
     },
    
