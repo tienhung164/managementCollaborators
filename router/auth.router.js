@@ -8,5 +8,6 @@ router.get('/register',authControll.getRegister)
 router.post('/register',authControll.postRegister)
 router.get('/checkOTP',authControll.getCheckOTP)
 router.post('/checkOTP',authControll.postCheckOTP)
+router.get('/forgotpassword',authControll.getForgotPassword)
 
 module.exports = router

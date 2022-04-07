@@ -90,6 +90,10 @@ class AuthController {
                 })
          
     }
+
+    getForgotPassword(req,res){
+        res.render('./auth/forgotpassword')
+    }
 }
 
 module.exports = new AuthController()

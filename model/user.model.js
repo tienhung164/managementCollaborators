@@ -1,50 +1,50 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 // Define collection and schema for Business
 let user = new Schema({
     email: {
-        type: String
+        type: String,
     },
     password: {
-        type: String
+        type: String,
     },
     name: {
-        type: String
+        type: String,
     },
     fb: {
-        type: String
+        type: String,
     },
     insta: {
-        type: String
+        type: String,
     },
     yearOfBirth: {
-        type: Number
+        type: Number,
     },
     stk: {
-        type: String
+        type: String,
     },
-    balances:{
-        type:Number,
-        default: 0
+    balances: {
+        type: Number,
+        default: 0,
     },
-    role:{
-        type:Number,
-        default: 0
+    role: {
+        type: Number,
+        default: 0,
     },
     verify: {
         type: Number,
-        default: 0
+        default: 0,
     },
     date: {
         type: Date,
-        default: Date.now
+        default: Date.now,
     },
 })
 
-module.exports = mongoose.model('user', user);
+module.exports = mongoose.model('user', user)
 
-//role 0 user 
+//role 0 user
 //role 1 admin
 
 //verify 0 - no
