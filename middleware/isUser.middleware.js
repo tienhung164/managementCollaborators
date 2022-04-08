@@ -5,14 +5,17 @@ function isUser(req,res,next){
     
    let access_token= req.cookies._pall_token
    jwt.verify(access_token, process.env.JWT_ACCESS_TOKEN, function(err, data){
-       if(data.role==1 || data.role==0 ) { 
-         res.locals.name=data.name
-         res.locals.email=data.email
-         res.locals.avatar=data.avatar
-
-         next()}
-       else res.redirect('/')
-   })
+       User.find({email:data.email},(err, kq)=>{    
+         if( kq.length>0) {
+          res.locals.name= kq[0].name
+          res.locals.email= kq[0].email
+          res.locals.avatar= kq[0].avatar
+         
+          next()
+        }else res.redirect('/auth/login')
+         })
+         
+       })
 
 
 }

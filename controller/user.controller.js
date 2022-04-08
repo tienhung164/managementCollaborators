@@ -1,4 +1,5 @@
 const User = require('../model/user.model')
+const Bill = require('../model/bill.model')
 
 
 class UserControll{
@@ -43,13 +44,32 @@ class UserControll{
         res.locals.title='Tạo đơn hàng'
         res.render('./user/createBill')
     }
+    postCreateBill(req,res){
+        let bill= new Bill()
+        bill.customer = req.body.customer
+        bill.sdt = req.body.sdt
+        bill.address = req.body.address
+        bill.price = req.body.price
+        bill.link = req.body.link
+        bill.email = req.body.email
+        bill.save()
+        res.locals.title='Tạo đơn hàng'
+        res.json({code:1,msg:'tao don thanh cong'})
+    }
+
     getListRank(req,res){
         res.locals.title='Xếp hạng ctv'
         res.render('./user/listRank')
     }
+    
     getListBill(req,res){
         res.locals.title='Quản lí đơn hàng'
-        res.render('./user/listBill')
+        Bill.find({email: res.locals.email},(err,_data)=>{
+                console.log(_data)
+                res.render('./user/listBill',{data:_data})
+
+        })
+        
     }
 
 } 

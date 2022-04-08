@@ -141,9 +141,6 @@ class AuthController {
                         if (result == true) {
                             let _data={
                                 email : data.email,
-                                role  : data.role,
-                                name  : data.name,
-                                avatar :data.avatar,
                             }
                             let acessToken = jwt.sign(_data, process.env.JWT_ACCESS_TOKEN,{
                                 expiresIn: '2w',

@@ -173,11 +173,19 @@
 const register =()=>{
     let _email= $("#email").val()
     let _password= $("#password").val()
+    if(_password=='') {
+      alert('Yêu cầu nhập mật khẩu')
+      break
+     }
     let _name= $("#name").val()
     let _fb= $("#fb").val()
     let _insta= $("#insta").val()
     let _yearOfBrith= $("#year_of_birth").val()
     let _stk= $("#stk").val()
+    if(_stk=='') {
+       alert('Yêu cầu nhập số tài khoản')
+       break
+    }
     $("#alert").css({"display":"block"})
 
  $.ajax({

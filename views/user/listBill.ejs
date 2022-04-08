@@ -8,7 +8,7 @@
           <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
             <div class="overflow-hidden">
               <table class="min-w-full">
-                <thead class="bg-white border-b">
+                <thead class="bg-gray-100 border-b">
                   <tr>
                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                       Date
@@ -23,107 +23,52 @@
                       Giá trị
                     </th>
                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                      Chiết khấu
+                      Chiết khấu(%)
                     </th>
                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                      Giá trị thực
-                    </th>
-                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                      Tình trạng
+                      Giá đôn
                     </th>
                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                       Phụ phí
-                    </th>
+                    </th> 
                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                      Lợi nhuận
-                    </th>
-                    
-
+                      Tình trạng
+                    </th> 
+               
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="bg-gray-100 border-b">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">19/4</td>
+                  <% 
+                    for(let i=0;i<data.length;i++) { 
+                      
+                      let myDate = new Date(data[i].date*1);
+                      %>
+                  <tr class=" border-b">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%=myDate.getDate()%>/<%=myDate.getMonth()%></td>
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      Hải Duyên
+                      <%=data[i].name%>
                     </td>
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      0356955848
+                      <%=data[i].sdt%>
                     </td>
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      300
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      5
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      200
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      Đang chờ duyệt
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      -10
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      140
-                    </td>
-                  </tr>
-                  <tr class="bg-white-100 border-b">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">19/4</td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      Hải Duyên
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      0356955848
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      300
+                      <%=data[i].price%>
                     </td>
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                       5
                     </td>
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      200
+                      <%=data[i].price_increase%>
                     </td>
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      Đang chờ duyệt
-                    </td>
+                      <%=data[i].fee%>
+                    </td>  
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      -10
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      140
-                    </td>
+                      <%=data[i].status%>
+                    </td>                  
                   </tr>
-                  <tr class="bg-gray-100 border-b">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">19/4</td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      Hải Duyên
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      0356955848
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      300
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      5
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      200
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      Đang chờ duyệt
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      -10
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      140
-                    </td>
-                  </tr>
-                  
+  
+                  <%}%>
                 </tbody>
               </table>
             </div>

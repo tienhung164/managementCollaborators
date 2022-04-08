@@ -6,7 +6,7 @@ const routerUser = require('./user.router')
 
 function route(app) {
     app.get('/', (req, res) => {
-        res.redirect('/auth/login')
+        res.redirect('/user/home')
     })
 
     app.use('/auth', routerAuth)

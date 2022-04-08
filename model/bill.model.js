@@ -4,30 +4,50 @@ const Schema = mongoose.Schema;
 // Define collection and schema for Business
 let bill = new Schema({
     customer: {
-        type: String
+        type: String,
+        require: true,
+    },
+    email: {
+        type: String,
+        require: true,
     },
     sdt: {
-        type: String
+        type: String,
+        require: true,
     }
     ,
     address: {
-        type: String
+        type: String,
+        require: true,
     }
     , 
     link: {
-        type: String
+        type: String,
+        require: true,
     }
     ,
-    verify: {
-        type: Number
-        default: 0
-    }
-    ,
-    sussces: {
-        type: Number
+    discount: {
+        type: Number,
         default: 0
     },
-    
+    price: {
+        type: Number,
+        default: 0
+    },
+    price_increase: {
+        type: Number,
+        default: 0
+    },
+    fee: {
+        type: Number,
+        default: 0
+    },
+    status: {
+        type: String,
+        enum : ['pending','reject','shipping','successful delivery','boom'],
+        default: 'pending'
+        
+    },   
     date: {
         type: String,
         default: Date.now
@@ -37,9 +57,4 @@ let bill = new Schema({
 
 module.exports = mongoose.model('bill', bill);
 
-//verifi 0 
-//verifi 0 - dduowjc chấp nhận bởi admin và vận chuyển
 
-//sussces 0 là đang giao 
-//sussces 1 là giao thành công
-//sussces 3 là đơn bị hoàn

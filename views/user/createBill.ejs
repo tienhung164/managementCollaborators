@@ -1,12 +1,21 @@
 <%- include('./component/header.ejs') -%>
     <!--- conttent-->
-
+  
     <div class="static  mt-10 mx-10">     
+      <div class="absolute top-6 right-auto w-fit bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md hidden " id="alert" role="alert">
+        <div class="flex">
+          <div class="py-1"><svg class="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
+          <div>
+            <p class="font-bold">Đơn hàng đã tạo thành công</p>
+            <p class="text-sm">Sẽ mất vài phút để shop duyệt đơn.</p>
+          </div>
+        </div>
+      </div>
        <!-- code here -->
-       <form action="" method="post">
+       
        <div class="flex justify-center">
         <div class="mb-3 xl:w-96">
-          <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700"
+          <label for="exampleText0" class="text-sm form-label inline-block mb-2 text-gray-700"
             >Tên khách hàng</label
           >
           <input
@@ -28,13 +37,14 @@
               m-0
               focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
             "
-            id="exampleText0"
+           
+            id="customer"
           />
         </div>
       </div>
       <div class="flex justify-center">
         <div class="mb-3 xl:w-96">
-          <label for="exampleTel0" class="form-label inline-block mb-2 text-gray-700"
+          <label for="exampleTel0" class="text-sm form-label inline-block mb-2 text-gray-700"
             >Số điện thoại người nhận hàng</label
           >
           <input
@@ -56,13 +66,14 @@
               m-0
               focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
             "
-            id="exampleTel0"
+            id="sdt"
+           
           />
         </div>
       </div>
       <div class="flex justify-center">
         <div class="mb-3 xl:w-96">
-          <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700"
+          <label for="exampleText0" class="text-sm form-label inline-block mb-2 text-gray-700"
             >Tổng giá đơn hàng</label
           >
           <input
@@ -84,14 +95,15 @@
               m-0
               focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
             "
-            id="exampleText0"
+            id="price"
+            
             placeholder="không tính phí ship "
           />
         </div>
       </div>
       <div class="flex justify-center">
         <div class="mb-3 xl:w-96">
-          <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700"
+          <label for="exampleText0" class="text-sm form-label inline-block mb-2 text-gray-700"
             >Link tất cả sản phẩm</label
           >
           <input
@@ -113,14 +125,15 @@
               m-0
               focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
             "
-            id="exampleText0"
+            id="link"
+         
             placeholder="Ctv copy link từ insta điền vào"
           />
         </div>
       </div>
       <div class="flex justify-center">
         <div class="mb-3 xl:w-96">
-          <label for="exampleFormControlTextarea1" class="form-label inline-block mb-2 text-gray-700"
+          <label for="exampleFormControlTextarea1" class="text-sm form-label inline-block mb-2 text-gray-700"
             >Địa chỉ chi tiết</label
           >
           <textarea
@@ -141,24 +154,96 @@
               m-0
               focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
             "
-            id="exampleFormControlTextarea1"
+            id="address"
             rows="3"
+            
           ></textarea>
+        </div>
+        <div class="mb-3 xl:w-96 hidden">
+          <label for="exampleFormControlTextarea1" class="text-sm form-label inline-block mb-2 text-gray-700"
+            >Email</label
+          >
+          <input
+            type="text"
+            class="
+              form-control
+              block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+            "
+            id="email"
+            rows="3"
+            name="email"
+            value="<%=locals.email%>"
+
+          ></input>
         </div>
       </div>
       <div class="flex space-x-2 justify-center">
         <div>
-      <button type="button" class="inline-block px-6 py-2.5 bg-green-800 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-900 hover:shadow-lg focus:bg-green-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-900 active:shadow-lg transition duration-150 ease-in-out">Xác nhận</button>
+      <button onclick="sendData()" class="inline-block px-6 py-2.5 bg-cyan-800 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-cyan-900 hover:shadow-lg focus:bg-cyan-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-900 active:shadow-lg transition duration-150 ease-in-out">Xác nhận</button>
     </div>
 </div>
-    </form>
+   
 
 
        <!-- code here -->
        
+      
 
        <%- include('./component/footer.ejs') -%>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+       <script>
 
+        const sendData =()=>{
+          let _customer= $("#customer").val()
+          let _sdt= $("#sdt").val()
+          let _link= $("#link").val()
+          let _address= $("#address").val()
+          let _price= $("#price").val()
+          let _email= $("#email").val() 
+          
+          
+          if(_customer=='' || _sdt=='' || _link=='' || _address=='' || _price==''){
+            alert('Vẫn còn ô trống, vui lòng nhập đầy đủ')
+             return
+          }
+      
+
+          $.ajax({
+            type: "post",
+            url: "createbill",
+            data: {
+              customer:_customer,
+              sdt:_sdt,
+              link:_link,
+              price:_price,
+              address:_price,
+              email:_email,
+            },
+            success: function (response) {
+               $("#alert").css({"display":"block"})
+               setTimeout(()=>{
+                 window.location.href='/user/listbill'
+               },3000)
+            }
+          });
+        }
+
+      </script>
+      
        </html >
        
       
