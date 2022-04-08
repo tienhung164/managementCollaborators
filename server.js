@@ -8,7 +8,9 @@ const ejs = require('ejs')
 const route = require('./router/router')
 const path = require('path')
 const db = require('./config/db/connectMonggo')
+var cookieParser = require('cookie-parser')
 
+app.use(cookieParser());
 app.use(bodyParser.json()) 
 app.use(bodyParser.urlencoded({ extended: true }))
 

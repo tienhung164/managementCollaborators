@@ -11,5 +11,6 @@ router.get('/checkOTP',authControll.getCheckOTP)
 router.post('/checkOTP',authControll.postCheckOTP)
 router.get('/forgotpassword',authControll.getForgotPassword)
 router.post('/forgotpassword',authControll.postForgotPassword)
+router.get('/logout',authControll.getLogout)
 
 module.exports = router

@@ -24,6 +24,14 @@ let user = new Schema({
     stk: {
         type: String,
     },
+    sdt: {
+        type: String,
+    },
+    avatar: {
+        type: String,
+        default:'public/img/avatar-default.png',
+    }
+    ,
     balances: {
         type: Number,
         default: 0,
@@ -37,7 +45,7 @@ let user = new Schema({
         default: 0,
     },
     date: {
-        type: Date,
+        type: String,
         default: Date.now,
     },
 })
@@ -48,4 +56,5 @@ module.exports = mongoose.model('user', user)
 //role 1 admin
 
 //verify 0 - no
-//verify 1 - yes
+//verify 1 - yes verify by gmail
+//verify 2 - yes verify by admin

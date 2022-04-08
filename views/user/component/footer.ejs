@@ -1,0 +1,117 @@
+ <!-- danh sách chat -->
+ <div class="absolute right-2 bottom-16 drop-shadow-xl hidden" id="iconMess1">
+    <img src="/public/img/logo_nabar.JPG" onclick="turnMess1()" class="rounded-full w-12 my-0" alt="Avatar" />
+</div>
+<div class="absolute right-2 bottom-2 drop-shadow-xl">
+    <img src="/public/img/group_logo.jpeg" onclick="document.getElementById('mess').style.display='block' "
+        class="rounded-full w-12 " alt="Avatar" />
+
+</div>
+
+<!--khung chat-->
+<div class="absolute h-98 w-72  right-16 bottom-0  " id="mess">
+    <div
+        class="h-12 w-full flex flex-row bg-gray-200 items-center rounded-t-lg  border-solid border-b border-gray-300 drop-shadow-lg">
+        <img src="/public/img/logo_nabar.JPG" class="rounded-full h-8 w-8 ml-1 " alt="Avatar" />
+        <span class="pl-1 ">Tiệm đồ si Pallgree</span>
+        <div class="w-2/6 flex flex-row justify-end items-center">
+            <div>
+                <svg onclick="reTurnMess1()" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 "
+                    viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="h-4/6 w-full  bg-gray-50 drop-shadow-lg">
+        <div class=" px-4 h-80 flex flex-col pt-1 overflow-y-auto">
+            <div class="w-full text-sm">
+                <div class="float-left">câu hỏi đây</div>
+            </div>
+            <div class="w-full text-sm">
+                <div class="float-right">đây là câu trả lời</div>
+            </div>
+            <div class="w-full text-sm">
+                <div class="float-left">câu hỏi đây</div>
+            </div>
+            <div class="w-full text-sm">
+                <div class="float-right">đây là câu trả lời</div>
+            </div>
+            <div class="w-full text-sm ">
+                <div class="float-left">câu hỏi đây</div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+    <div class="static h-14 w-full bg-gray-50 drop-shadow-lg">
+        <div class="flex flex-row-reverse items-center">
+            <div class="my-3 mx-2 ">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                        d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
+                </svg>
+            </div>
+            <div class="mb-3  my-3">
+                <input type="text" class="
+                  form-control
+                  block
+                  w-full
+                  py-1      
+                  px-2                 
+                  text-base
+                  font-normal
+                  text-gray-700
+                  bg-gray-200
+                  rounded-lg
+                  ease-in-out
+                  m-0
+                
+                " placeholder="Aa" />
+            </div>
+
+            <div class="absolute mb-3 my-3 mx-1 left-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="text-xs border-l-2 border-teal-900 ml-1 pl-2 absolute bottom-2 left-2">
+    Cổng thông tin giữa Pallgree Shop và các bạn cộng tác viên
+    <br>
+    <a href="https://www.instagram.com/pallgree.shop/"
+        class="text-pink-600 hover:text-pink-800 focus:text-pink-800 active:text-pink-800 duration-200 transition ease-in-out">Connect
+        us with instagram</a>
+
+</div>
+</div>
+
+
+
+
+</body>
+
+<script>
+function turnMess1() {
+document.getElementById('mess').style.display = 'block';
+document.getElementById('iconMess1').style.display = 'none';
+}
+function reTurnMess1() {
+document.getElementById('mess').style.display = 'none';
+document.getElementById('iconMess1').style.display = 'block';
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+

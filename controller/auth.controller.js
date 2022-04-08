@@ -21,7 +21,7 @@ class AuthController {
         let _yearOfBrith = req.body.yearOfBrith
         let _stk = req.body.stk
 
-        User.findOne({ email: _email }, (err, data) => {
+        User.find({ email: _email }, (err, data) => {
             if (data.length != 0) {
                 return res.json({ code: 1, message: 'email da ton tai' })
             }
@@ -83,7 +83,7 @@ class AuthController {
             .then((data) => {
                 let dateOld = data.date
                 //console.log(dateOld);
-                if (Date.now() - dateOld < 6000000) {
+                if (Date.now() - dateOld < 60000) {
                     User.findOneAndUpdate(
                         { email: _email },
                         { verify: 1 },
@@ -123,6 +123,12 @@ class AuthController {
         })
     }
 
+    getLogout(req,res){
+        res.clearCookie('_pall_token');
+        res.redirect('/auth/login');
+
+    }
+
     postLogin(req, res) {
         let _email = req.body.email
         let _password = req.body.password
@@ -136,11 +142,13 @@ class AuthController {
                             let _data={
                                 email : data.email,
                                 role  : data.role,
+                                name  : data.name,
+                                avatar :data.avatar,
                             }
                             let acessToken = jwt.sign(_data, process.env.JWT_ACCESS_TOKEN,{
                                 expiresIn: '2w',
                               })
-                            res.cookie('_pall_user',acessToken)
+                            res.cookie('_pall_token',acessToken)
                             res.json({
                                 code: 3,
                                 mess: 'dang nhap thanh cong',

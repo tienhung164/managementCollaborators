@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=locals.title%></title>
+    <link rel="icon" href="/public/img/icon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        marquee: 'marquee 28s linear infinite',
+
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(-150%)' },
+                        },
+
+                    },
+
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="
+    relative
+    w-full
+    flex flex-wrap
+    items-center
+    justify-between
+    py-4
+    bg-gray-100
+    text-gray-500
+    hover:text-gray-700
+    focus:text-gray-700
+    shadow-lg
+    navbar navbar-expand-lg navbar-light
+    ">
+        <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
+            <button class="
+        navbar-toggler
+        text-gray-500
+        border-0
+        hover:shadow-none hover:no-underline
+        py-2
+        px-2.5
+        bg-transparent
+        focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline
+        " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="w-6" role="img"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path fill="currentColor"
+                        d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+                    </path>
+                </svg>
+            </button>
+            <div class="collapse navbar-collapse flex-grow items-center" id="navbarSupportedContent">
+
+                <!-- Left links -->
+                <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
+                    <li class="nav-item p-2">
+                        <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                            href="/user/home">Trang chủ</a>
+                    </li>
+                    <li class="nav-item p-2">
+                        <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                            href="/user/createbill">Tạo đơn </a>
+                    </li>
+                    <li class="nav-item p-2">
+                        <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" href="/user/listbill">Quản lí đơn hàng</a>
+                    </li>
+
+                    <li class="nav-item p-2">
+                        <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" href="/user/listrank">Xếp hạng</a>
+                    </li>
+                </ul>
+                <!-- Left links -->
+            </div>
+            <!-- Collapsible wrapper -->
+
+            <!-- Right elements -->
+            <div class="flex items-center relative">
+                <!-- Icon -->
+                <div class="dropdown relative">
+                    <a class="
+        text-gray-500
+        hover:text-gray-700
+        focus:text-gray-700
+        mr-4
+        dropdown-toggle
+        hidden-arrow
+        flex items-center
+        " href="#" id="dropdownMenuButton1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bell" class="w-4"
+                            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z">
+                            </path>
+                        </svg>
+                        <span
+                            class="text-white bg-red-700 absolute rounded-full text-xs -mt-2.5 ml-2 py-0 px-1.5">1</span>
+                    </a>
+                    <ul class="
+dropdown-menu
+min-w-max
+absolute
+hidden
+bg-white
+text-base
+z-50
+float-left
+py-2
+list-none
+text-left
+rounded-lg
+shadow-lg
+mt-1
+hidden
+m-0
+bg-clip-padding
+border-none
+left-auto
+right-0
+" aria-labelledby="dropdownMenuButton1">
+                        <li>
+                            <a class="
+    dropdown-item
+    text-sm
+    py-2
+    px-4
+    font-normal
+    block
+    w-full
+    whitespace-nowrap
+    bg-transparent
+    text-gray-700
+    hover:bg-gray-100
+    " href="#">Action</a>
+                        </li>
+                        <li>
+                            <a class="
+    dropdown-item
+    text-sm
+    py-2
+    px-4
+    font-normal
+    block
+    w-full
+    whitespace-nowrap
+    bg-transparent
+    text-gray-700
+    hover:bg-gray-100
+    " href="#">Another action</a>
+                        </li>
+                        <li>
+                            <a class="
+    dropdown-item
+    text-sm
+    py-2
+    px-4
+    font-normal
+    block
+    w-full
+    whitespace-nowrap
+    bg-transparent
+    text-gray-700
+    hover:bg-gray-100
+    " href="#">Something else here</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown relative">
+                    <a class="dropdown-toggle flex items-center hidden-arrow" href="#" id="dropdownMenuButton2"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      
+                        <img src="/<%=locals.avatar%>" class="rounded-full"
+                        style="height: 25px; width: 25px" alt="" loading="lazy" />
+                       
+                    </a>
+                    <ul class="
+dropdown-menu
+min-w-max
+absolute
+hidden
+bg-white
+text-base
+z-50
+float-left
+py-2
+list-none
+text-left
+rounded-lg
+shadow-lg
+mt-1
+hidden
+m-0
+bg-clip-padding
+border-none
+left-auto
+right-0
+" aria-labelledby="dropdownMenuButton2">
+                        <li>
+                            <a class="
+    dropdown-item
+    text-sm
+    py-2
+    px-4
+    font-normal
+    block
+    w-full
+    whitespace-nowrap
+    bg-transparent
+    text-gray-700
+    hover:bg-gray-100
+    " href="#"><%=locals.name%></a>
+                        </li>
+                        <li>
+                            <a class="
+    dropdown-item
+    text-sm
+    py-2
+    px-4
+    font-normal
+    block
+    w-full
+    whitespace-nowrap
+    bg-transparent
+    text-gray-700
+    hover:bg-gray-100
+    " href="/user/infor">Thông tin cá nhân</a>
+                        </li>
+                        <li>
+                            <a class="
+    dropdown-item
+    text-sm
+    py-2
+    px-4
+    font-normal
+    block
+    w-full
+    whitespace-nowrap
+    bg-transparent
+    text-gray-700
+    hover:bg-gray-100
+    " href="/auth/logout">Log out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Right elements -->
+        </div>
+    </nav>
+    <!--- thông báo  -->
+    <div class="container"></div>
+    <div class="static flex w-full ">
+        <div class="py-0  animate-marquee  whitespace-nowrap absolute right-0 overflow-hidden">
+            <span class="text-xs mx-4">Đơn hàng mang tên A của bạn đã được chấp nhận và vận chuyển</span>
+            <span class="text-xs mx-4">Đơn hàng mang tên B đã bị delay từ 4 hôm nay, đề nghị ctv liên lạc cho khác để
+                giải quyết</span>
+        </div>
+    </div>
